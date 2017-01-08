@@ -1,0 +1,52 @@
+client/bower_components
+node_modules
+public
+.tmp
+.sass-cache
+dist
+/server/config/local.env.js
+
+/data
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/*.iws
+**/.idea/libraries/
+**/.idea/dataSources.xml
+**/.idea/sqlDataSources.xml
+**/.idea/vcs.xml
+/.idea/uiDesigner.xml
+.DS_Store
+.vagrant
+
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+# *.iml
+
+## Directory-based project format:
+# .idea/
+# if you remove the above rule, at least ignore the following:
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/misc.xml
+
+# Gradle:
+# .idea/gradle.xml
+# .idea/libraries
+
+# Mongo Explorer plugin:
+# .idea/mongoSettings.xml
+
+.idea/jsLibraryMappings.xml
+
+neo4j-community-2.2.1
