@@ -18,7 +18,9 @@ frotz telling.z5
 # Building
 
 ```
-docker build -t newtmitch/frotz --build-arg GIT_CHECKOUT=2.52 .
+GIT_CHECKOUT=2.52 && \
+    docker build -t newtmitch/frotz --build-arg GIT_CHECKOUT . && \
+    docker tag newtmitch/frotz newtmitch/frotz:$GIT_CHECKOUT
 ```
 
 # Change Log
