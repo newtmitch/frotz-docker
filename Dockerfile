@@ -4,20 +4,13 @@ FROM alpine:3.12 as buildbase
 RUN apk --no-cache --update add wget curl git make gcc musl-dev ncurses-dev zip; \
   rm -rf /var/cache/apk/*;
 
-ARG GIT_CHECKOUT=2.52
+ARG GIT_CHECKOUT=2.55
 WORKDIR /tmp
 RUN git clone https://gitlab.com/DavidGriffith/frotz; cd frotz; git checkout ${GIT_CHECKOUT}
 RUN cd frotz && make nosound && mv frotz /usr/local/bin
 
-# clean up
-#RUN rm -rf /tmp/frotz; \
-#    apk del wget curl git make gcc musl-dev zip
-
 FROM alpine:latest
-#COPY --from=0 /usr/lib /usr/lib
-#COPY --from=0 /usr/include /usr/include
 COPY --from=0 /usr/local/bin /usr/local/bin
-#COPY --from=0 /usr /usr
 
 RUN apk --no-cache --update add musl ncurses; \
   rm -rf /var/cache/apk/*;

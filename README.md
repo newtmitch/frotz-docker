@@ -19,13 +19,35 @@ frotz telling.z5
 
 # Building
 
+To build just for your local platform, simply run:
+
+```bash
+docker build newtmitch/frotz:latest .
 ```
-GIT_CHECKOUT=2.52 && \
-    docker build -t newtmitch/frotz --build-arg GIT_CHECKOUT . && \
-    docker tag newtmitch/frotz newtmitch/frotz:$GIT_CHECKOUT
+
+To build a multi-platform image (ARM64 and AMD64) and push to Docker Hub, you can do that in a single step:
+
+```bash
+docker buildx build \
+  --platform linux/amd64,linux/arm64 \
+  -t newtmitch/frotz:latest \
+  --push \
+  .
+```
+
+Be sure to run `docker login` before you build with `--push`.
+
+If you push to Docker Hub, also make sure to tag it with the latest build version per the Dockerfile:
+
+```
+docker tag newtmitch/frotz:latest newtmitch/frotz:2.55
 ```
 
 # Change Log
+
+## 2026-03-18
+* updated README with new build instructions - removed explicit version number
+* updated Dockerfile build number with latest from source repo
 
 ## 2020-11-26
 * Moved to alpine linux from ubutnu
