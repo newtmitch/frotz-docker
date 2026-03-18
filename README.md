@@ -2,7 +2,7 @@
 
 This is a Dockerized frotz interpreter for Infocom and other Z-Machine games.
 
-This is built directly from the [source repo](HERE) maintained by David Griffith. This version of frotz is built without sound in order to compile and run properly in an Alpine Linux container.
+This is built directly from the [source repo](https://gitlab.com/DavidGriffith/frotz) maintained by David Griffith. This version of frotz is built without sound in order to compile and run properly in an Alpine Linux container.
 
 You can also visit the [Docker Hub repo](https://hub.docker.com/r/newtmitch/frotz).
 
